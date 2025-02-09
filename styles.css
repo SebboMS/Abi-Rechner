@@ -40,6 +40,8 @@ table {
     border-collapse: collapse;
     overflow-x: auto; /* scrollbar, falls nötig */
     display: block;
+    max-width: 100%;
+    white-space: nowrap;
 }
 
 th, td {
@@ -96,7 +98,6 @@ button:hover {
 }
 
 /* Design von Links */
-
 a {
     color: var(--primary-color);
     text-decoration: none;
