@@ -33,19 +33,24 @@ h3 {
     color: var(--primary-color);
 }
 
-/* Stil der Tabelle */
+/* Wrapper für horizontales Scrollen */
 .table-wrapper {
-    overflow-x: auto; /* Ermöglicht horizontales Scrollen */
+    display: block; /* Der Wrapper muss sichtbar sein */
+    overflow-x: auto; /* Aktiviert horizontales Scrollen */
     margin-bottom: 20px;
+    max-width: 100%; /* Begrenze die Breite auf den Container */
+    border: 1px solid var(--secondary-color); /* Optional: Rahmen um die Tabelle */
 }
 
+/* Tabelle */
 table {
-    width: 100%;
-    margin-bottom: 20px;
+    width: 100%; /* Tabelle nimmt die gesamte Breite ein */
+    min-width: 600px;
     border-collapse: collapse;
-    white-space: nowrap; /* Verhindert Zeilenumbrüche innerhalb der Zellen */
+    white-space: nowrap; /* Verhindert Zeilenumbrüche in den Zellen */
 }
 
+/* Kopf- und Zellenstile */
 th, td {
     padding: 10px;
     border: 1px solid var(--secondary-color);
@@ -55,7 +60,6 @@ th, td {
 th {
     background-color: var(--primary-color);
     color: var(--white-color);
-    font-weight: bold; 
 }
 
 td {
