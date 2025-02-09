@@ -37,14 +37,12 @@ h3 {
 .table-wrapper {
     display: block; /* Der Wrapper muss sichtbar sein */
     overflow-x: auto; /* Aktiviert horizontales Scrollen */
-    margin-bottom: 20px;
     max-width: 100%; /* Begrenze die Breite auf den Container */
     border: 1px solid var(--secondary-color); /* Optional: Rahmen um die Tabelle */
 }
 
 /* Tabelle */
 table {
-    width: 100%; /* Tabelle nimmt die gesamte Breite ein */
     min-width: 600px;
     border-collapse: collapse;
     white-space: nowrap; /* Verhindert Zeilenumbrüche in den Zellen */
