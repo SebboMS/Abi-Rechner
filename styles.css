@@ -189,6 +189,8 @@ a:hover {
 
     table {
         font-size: 12px;
+        display: block;
+        overflow-x: auto;
     }
 
     th, td {
