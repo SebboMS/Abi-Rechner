@@ -1,27 +1,42 @@
+/* Definition der Farbpalette */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #333333;
+    --accent-color: #009688;
+    --background-color: #f9f9f9;
+    --text-color: #333333;
+    --white-color: #ffffff;
+}
+
+/* Allgemeiner Designstil */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
 }
 
 .container {
     max-width: 90%;
     width: 600px; /* Standardgröße */
     margin: 50px auto;
-    background-color: #fff;
+    background-color: var(--white-color);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h3 {
     text-align: center;
-    color: #333;
+    color: var(--primary-color);
 }
 
+/* Stil der Tabelle */
 table {
     width: 100%;
+    margin-bottom: 20px;
     border-collapse: collapse;
     overflow-x: auto; /* scrollbar, falls nötig */
     display: block;
@@ -29,47 +44,88 @@ table {
 
 th, td {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--secondary-color);
     text-align: center;
 }
 
 th {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
-    font-size: 14px; /* kleinere Schrift für Mobilgeräte */
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: bold; 
 }
 
 td {
-    background-color: #f9f9f9;
+    background-color: var(--white-color);
+    color: var(--text-color);
 }
 
+/* Design der Input-Felder */
 input[type="number"] {
     width: 100%;
-    min-width: 50px; /* verhindert zu kleine Felder */
-    padding: 8px; /* weniger Platz für mobile Geräte */
-    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid var(--secondary-color);
     border-radius: 5px;
     box-sizing: border-box;
     text-align: center;
     font-size: 16px;
 }
 
+input[type="number"]:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+/* Design der Buttons */
 button {
     display: block;
     width: 100%;
-    padding: 15px; /* statt 20px */
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+    padding: 15px; 
+    margin-top: 10px;
     margin-bottom: 10px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Design von Links */
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline; 
+}
+
+/* Design des Ergebnisfelder */
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--white-color);
+    border-left: 4px solid var(--primary-color);
+    color: var(--text-color);
+    word-wrap: break-word;
+}
+
+.info {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: var(--background-color);
+    border-left: 4px solid var(--accent-color);
+    color: var(--text-color);
+}
 @media (max-width: 600px) {
     button {
         padding: 10px; /* noch kleiner für Handys */
@@ -77,55 +133,52 @@ button {
     }
 }
 
-button:hover {
-    background-color: #0056b3;
-}
-
-.result {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    word-wrap: break-word;
-}
-
-.info {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.red-letter {
-    color: red;
+.highlight {
+    color: var(--primary-color);
     font-weight: bold;
 }
 
 .important-text {
     font-weight: bold;
     text-decoration: underline;
-    text-decoration-color: red;
+    text-decoration-color: var(--primary-color);
 }
 
-/* Für Smartphones (max. 480px) */
-@media (max-width: 480px) {
+/* Responsives Layout */
+@media (max-width: 768px) {
     .container {
         width: 95%;
-        padding: 10px;
     }
 
     table {
-        font-size: 12px; /* Kleinere Schrift */
+        font-size: 14px;
     }
 
     th, td {
-        padding: 5px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px; 
     }
 }
 
-/* Für Tablets (481px bis 1024px) */
-@media (max-width: 1024px) {
-    .container {
-        width: 80%;
+@media (max-width: 480px) {
+    h3 {
+        font-size: 18px;
+    }
+
+    table {
+        font-size: 12px;
     }
 
     th, td {
-        font-size: 14px;
+        padding: 6px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px;
     }
 }
